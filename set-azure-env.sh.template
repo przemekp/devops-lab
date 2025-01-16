@@ -1,0 +1,64 @@
+#!/bin/bash
+ACCEPTED_ENVIRONMENTS=("demo")
+ACCEPTED_LABS=("lab-0-terraform" "lab-1-k8s")
+
+usage()
+{
+    echo " $(basename $0) [-h] -l lab  -e environment"
+    return
+}
+
+get_opts()
+{
+    while [[ $# -gt 0 ]]
+    do
+        key="$1"
+        case $key in
+            -l|--lab)
+                shift
+                LAB="${1}"
+                shift
+                ;;
+            -e|--environment)
+                shift
+                ENVIROMENT="${1}"
+                shift
+                ;;
+            -h|--help)
+                usage
+                return
+                ;;
+            *)
+                usage
+                return
+                ;;
+        esac
+    done
+}
+
+get_opts $*
+if [ $# -gt 4 ] || [ $# -lt 1 ]; then
+    usage
+fi
+if [[ ! ${ACCEPTED_ENVIRONMENTS[@]} =~ $ENVIROMENT ]]; then
+    echo "Wrong environment: $ENVIROMENT"
+    echo "Try with environment: ${ACCEPTED_ENVIRONMENTS[*]}"
+    usage
+fi
+if [[ ! ${ACCEPTED_LABS[@]} =~ $LAB ]]; then
+    echo "Wrong lab: $LAB"
+    echo "Try with lab: ${ACCEPTED_LABS[*]}"
+    usage
+fi
+
+export ARM_CLIENT_ID=00000000-0000-0000-0000-000000000000
+export ARM_SUBSCRIPTION_ID=00000000-0000-0000-0000-000000000000
+export ARM_TENANT_ID=00000000-0000-0000-0000-000000000000
+
+export AZURE_RSG=<resource_group_name>
+export AZURE_STORAGE_ACCOUNT_NAME=<storage_account_name>
+export AZURE_STORAGE_CONTAINER_NAME=<container_name>
+
+export TF_DATA_DIR=./.terraform/$ENVIROMENT
+export TF_ENV=$ENVIROMENT_$LAB
+export LAB=$LAB
