@@ -14,4 +14,3 @@ locals {
   }
   tags = merge(local.mandatory_tags, var.custom_tags)
 }
-#
