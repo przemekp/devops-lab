@@ -11,6 +11,9 @@ output:
     <!-- END_TF_DOCS -->
     {{- printf "\n" -}}
 
+output-check:
+  enabled: true
+
 output-values:
   enabled: false
   from: ""
