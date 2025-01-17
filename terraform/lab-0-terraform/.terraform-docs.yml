@@ -1,14 +1,6 @@
 formatter: markdown table
 
-content: |-
-  {{ .Header }}
-  {{ .Footer }}
-  {{ .Inputs }}
-  {{ .Modules }}
-  {{ .Outputs }}
-  {{ .Providers }}
-  {{ .Requirements }}
-  {{ .Resources }}
+content: ""
 
 output:
   file: README.md
@@ -17,7 +9,6 @@ output:
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
     <!-- END_TF_DOCS -->
-    {{- printf "\n" -}}
 
 recursive:
   enabled: true
