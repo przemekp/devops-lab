@@ -52,8 +52,8 @@ repos:
       args:
       - --tf-init-args=-backend=false
 
-  - repo: https://github.com/terraform-docs/terraform-docs
-    rev: v0.19.0
-    hooks:
-      - id: terraform-docs-go
-        args: ["-c", "terraform/lab-0-terraform/.terraform-docs.yml", "terraform/lab-0-terraform"]
+  # - repo: https://github.com/terraform-docs/terraform-docs
+  #   rev: v0.19.0
+  #   hooks:
+  #     - id: terraform-docs-go
+  #       args: ["-c", "terraform/lab-0-terraform/.terraform-docs.yml", "terraform/lab-0-terraform"]
