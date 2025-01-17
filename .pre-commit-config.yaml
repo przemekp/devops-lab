@@ -48,4 +48,6 @@ repos:
       - --args=--config=__GIT_WORKING_DIR__/terraform/.tflint.hcl
       - --args=--call-module-type=all
       - --args=--recursive
-    # - id: terraform_validate doesn't work with TF_DIR set to a subdirectory
+    - id: terraform_validate
+      args:
+      - --tf-init-args=-backend=false
