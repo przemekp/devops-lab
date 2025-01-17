@@ -1,18 +1,26 @@
 <!-- BEGIN_TF_DOCS -->
-#### Requirements
+## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 4.15.0 |
 
-#### Modules
+## Providers
+
+No providers.
+
+## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_rsg"></a> [rsg](#module\_rsg) | ../modules/rsg | n/a |
 
-#### Inputs
+## Resources
+
+No resources.
+
+## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -20,7 +28,7 @@
 | <a name="input_environment"></a> [environment](#input\_environment) | Name of environment | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Azure region to deploy resources | `string` | n/a | yes |
 
-#### Outputs
+## Outputs
 
 | Name | Description |
 |------|-------------|

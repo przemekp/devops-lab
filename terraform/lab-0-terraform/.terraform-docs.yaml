@@ -15,6 +15,9 @@ output-values:
   enabled: false
   from: ""
 
+output-check:
+  enabled: true
+
 recursive:
   enabled: true
   include-main: true
