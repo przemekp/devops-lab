@@ -1,6 +1,14 @@
 formatter: markdown table
 
-content: ""
+content: |-
+  {{ .Header }}
+  {{ .Footer }}
+  {{ .Inputs }}
+  {{ .Modules }}
+  {{ .Outputs }}
+  {{ .Providers }}
+  {{ .Requirements }}
+  {{ .Resources }}
 
 output:
   file: README.md
