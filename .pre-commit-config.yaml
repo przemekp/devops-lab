@@ -42,8 +42,6 @@ repos:
       - --args=-diff
       - --args=-write=true
     - id: terraform_docs
-      # args:
-      # - --args=--config=terraform/.terraform-docs.yml
     - id: terraform_tflint
       files: \.tf$
       args:
@@ -54,8 +52,8 @@ repos:
       args:
       - --tf-init-args=-backend=false
 
-  # - repo: https://github.com/terraform-docs/terraform-docs
-  #   rev: v0.19.0
-  #   hooks:
-  #     - id: terraform-docs-go
-  #       args: ["-c", ".terraform-docs.yaml", "terraform/lab-0-terraform"]
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.19.0
+    hooks:
+      - id: terraform-docs-go
+        args: ["-c", "terraform/lab-0-terraform/.terraform-docs.yml", "terraform/lab-0-terraform"]
