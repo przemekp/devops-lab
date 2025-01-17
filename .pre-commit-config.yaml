@@ -42,6 +42,8 @@ repos:
       - --args=-diff
       - --args=-write=true
     - id: terraform_docs
+      # args:
+      # - --args=--config=terraform/.terraform-docs.yml
     - id: terraform_tflint
       files: \.tf$
       args:
